@@ -1,0 +1,53 @@
+{
+  "name": "@grials/medical_system_models",
+  "version": "1.0.0",
+  "description": "Medical System Models",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "rimraf dist/ && tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "lint:fix": "tslint --fix -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "test:basic": "ts-node ./src/test/basic.ts",
+    "test:validators": "ts-node ./src/test/validateSchemaValidators.ts",
+    "test:definitions": "ts-node ./src/test/validateSchemaDefinitions.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grials/medical_system_models.git"
+  },
+  "author": {
+    "name": "Jose Manuel Mendez Romero"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grials/medical_system_models/issues"
+  },
+  "homepage": "https://github.com/grials/medical_system_models#readme",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "mongoose": "^8.6.1",
+    "type-check": "^0.4.0",
+    "winston": "^3.14.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "@types/type-check": "^0.3.31",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "5.6.2"
+  }
+}
