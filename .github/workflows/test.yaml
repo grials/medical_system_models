@@ -1,22 +1,22 @@
-# name: Deploy Feature Branch on DEV Environment
-# run-name: ${{ github.head_ref }} deployed to DEV by @${{ github.actor }}
+name: Deploy Feature Branch on DEV Environment
+run-name: ${{ github.head_ref }} deployed to DEV by @${{ github.actor }}
 
-# on:
-#   pull_request:
-#     types: [opened, reopened, synchronize]
-#     branches: [master]
-# # env:
-# jobs:
-#   models-test:
-#     name: Test All Models
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v3
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches: [master]
+# env:
+jobs:
+  models-test:
+    name: Test All Models
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-#       - name: Publish to NPM
-#         run: |
-#           npm run lint
-#           npm run test:definitions
-#           npm run test:validators
+      - name: Publish to NPM
+        run: |
+          npm run lint
+          npm run test:definitions
+          npm run test:validators
 
