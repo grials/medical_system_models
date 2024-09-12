@@ -14,7 +14,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Publish to NPM
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: RUN ALL TEST
         run: |
           npm run lint
           npm run test:definitions
