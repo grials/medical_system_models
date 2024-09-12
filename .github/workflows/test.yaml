@@ -21,6 +21,7 @@ jobs:
 
       - name: RUN ALL TEST
         run: |
+          npm ci
           npm run lint
           npm run test:definitions
           npm run test:validators
