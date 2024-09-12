@@ -53,4 +53,4 @@ jobs:
           npm run lint
           npm run test:definitions
           npm run test:validators
-          npm publish
+          npm publish --access public
