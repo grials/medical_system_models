@@ -29,6 +29,7 @@
     "name": "Jose Manuel Mendez Romero"
   },
   "license": "ISC",
+  "private": false,
   "bugs": {
     "url": "https://github.com/grials/medical_system_models/issues"
   },
