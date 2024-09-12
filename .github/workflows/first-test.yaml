@@ -1,0 +1,11 @@
+name: lo que sea
+on:
+  push:
+    branches: ['master']
+jobs: 
+  my-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Hello world'
+        run: echo 'Hello world'
