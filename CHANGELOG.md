@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/grials/medical_system_models/compare/v1.0.0...v1.0.1) (2024-09-12)
+
+
+### Bug Fixes
+
+* last test 2 ([99c5691](https://github.com/grials/medical_system_models/commit/99c5691cffe6edcd14199dfbc8d748ef49a0b145))
+
 ## 1.0.0 (2024-09-12)
 
 
