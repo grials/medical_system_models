@@ -1,39 +1,35 @@
 import { SchemaDefinition } from 'mongoose';
 import {
   auditUserSubSchemaDefinition,
-  codeableConceptSchemaDefinition,
+  codeableConceptSubSchemaDefinition,
   humanNameSchemaDefinition,
   identifierSubSchemaDefinition,
 } from '../0-base';
 import { contactPointSubSchemaDefinition } from '../0-base/contactPoint';
 
-export const patientSchemaDefinition: SchemaDefinition = {
+export const practitionerSchemaDefinition: SchemaDefinition = {
+  name: { type: [humanNameSchemaDefinition] },
+  telecom: { type: [contactPointSubSchemaDefinition] },
+  identification: { type: [identifierSubSchemaDefinition] },
+  specialties: { type: [codeableConceptSubSchemaDefinition] },
   birthDate: { type: Date },
   active: { type: Boolean, default: true },
   _user: { type: auditUserSubSchemaDefinition },
-  name: { type: [humanNameSchemaDefinition] },
-  telecom: { type: [contactPointSubSchemaDefinition] },
-  nationality: { type: codeableConceptSchemaDefinition },
-  residenceCountry: { type: codeableConceptSchemaDefinition },
-  deceasedBoolean: { type: Boolean, default: false },
-  deceasedDate: { type: Date },
-  referedBy: { type: String },
-  identification: { type: [identifierSubSchemaDefinition] },
 };
 
-export const patientSubSchemaDefinition: SchemaDefinition = Object.assign({}, patientSchemaDefinition, {
+export const practitionerSubSchemaDefinition: SchemaDefinition = Object.assign({}, practitionerSchemaDefinition, {
   _id: { type: String },
 });
 
-export const patientSchemaValidator: any = {
-  $id: 'http://example.com/schemas/patientSchemaValidator.json',
+export const practitionerSchemaValidator: any = {
+  $id: 'http://example.com/schemas/practitionerSchemaValidator.json',
   definitions: {
-    patientSchemaValidator: {
+    practitionerSchemaValidator: {
       $ref: '#',
     },
   },
-  title: 'Patient',
-  description: 'Patient schema validator',
+  title: 'Practitioner',
+  description: 'Practitioner schema validator',
   type: 'object',
   properties: {
     _id: {
@@ -46,30 +42,16 @@ export const patientSchemaValidator: any = {
         $ref: 'humanNameSchemaValidator.json#/definitions/humanNameSchemaValidator',
       },
     },
-    nationality: {
-      $ref: 'codeableConceptSchemaValidator.json#/definitions/codeableConceptSchemaValidator',
-    },
-    residenceCountry: {
-      $ref: 'codeableConceptSchemaValidator.json#/definitions/codeableConceptSchemaValidator',
-    },
-    deceasedBoolean: { type: 'boolean' },
-    deceasedDate: {
-      anyOf: [
-        {
-          type: 'object',
-          isDate: true,
-        },
-        {
-          type: 'string',
-          format: 'date-time',
-        },
-      ],
-    },
-    referedBy: { type: 'string' },
     identification: {
       type: 'array',
       items: {
         $ref: 'identifierSchemaValidator.json#/definitions/identifierSchemaValidator',
+      },
+    },
+    specialties: {
+      type: 'array',
+      items: {
+        $ref: 'codeableConceptSchemaValidator.json#/definitions/codeableConceptSchemaValidator',
       },
     },
     birthDate: {
