@@ -1,6 +1,6 @@
 {
   "name": "@grials/medical_system_models",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Medical System Models",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -29,6 +29,7 @@
     "name": "Jose Manuel Mendez Romero"
   },
   "license": "ISC",
+  "private": false,
   "bugs": {
     "url": "https://github.com/grials/medical_system_models/issues"
   },
