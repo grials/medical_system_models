@@ -1,4 +1,4 @@
-name: Deploy Feature Branch on DEV Environment
+name: Run project test
 run-name: ${{ github.head_ref }} deployed to DEV by @${{ github.actor }}
 
 on:
