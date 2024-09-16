@@ -8,6 +8,7 @@ import {
 import { contactPointSubSchemaDefinition } from '../0-base/contactPoint';
 
 export const patientSchemaDefinition: SchemaDefinition = {
+  idx: { type: [String] },
   birthDate: { type: Date },
   active: { type: Boolean, default: true },
   _user: { type: auditUserSubSchemaDefinition },
@@ -36,6 +37,12 @@ export const patientSchemaValidator: any = {
   description: 'Patient schema validator',
   type: 'object',
   properties: {
+    idx: {
+      type: 'array',
+      items: {
+        type: 'string',
+      },
+    },
     _id: {
       type: 'string',
       maxLength: 255,
