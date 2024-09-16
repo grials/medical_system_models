@@ -1,5 +1,5 @@
-name: Deploy Feature Branch on DEV Environment
-run-name: ${{ github.head_ref }} deployed to DEV by @${{ github.actor }}
+name: Run project test
+run-name: ${{ github.head_ref }} run all project test by @${{ github.actor }}
 
 on:
   pull_request:

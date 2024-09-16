@@ -8,6 +8,7 @@ import {
 import { contactPointSubSchemaDefinition } from '../0-base/contactPoint';
 
 export const practitionerSchemaDefinition: SchemaDefinition = {
+  idx: { type: [String] },
   name: { type: [humanNameSchemaDefinition] },
   telecom: { type: [contactPointSubSchemaDefinition] },
   identification: { type: [identifierSubSchemaDefinition] },
@@ -32,6 +33,12 @@ export const practitionerSchemaValidator: any = {
   description: 'Practitioner schema validator',
   type: 'object',
   properties: {
+    idx: {
+      type: 'array',
+      items: {
+        type: 'string',
+      },
+    },
     _id: {
       type: 'string',
       maxLength: 255,
