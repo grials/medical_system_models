@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/grials/medical_system_models/compare/v1.0.3...v1.0.4) (2024-09-16)
+
+
+### Bug Fixes
+
+* fix patient and practitioner models ([efe45b7](https://github.com/grials/medical_system_models/commit/efe45b7fed988114dc31eeb54c5041e24bceef13))
+
 ## [1.0.3](https://github.com/grials/medical_system_models/compare/v1.0.2...v1.0.3) (2024-09-15)
 
 
