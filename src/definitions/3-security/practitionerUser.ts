@@ -69,6 +69,6 @@ export const practitionerUserSchemaValidator: any = {
       type: 'number',
     },
   },
-  required: [],
+  required: ['practitionerProfile', ...userSchemaValidator.required],
   additionalProperties: false,
 };

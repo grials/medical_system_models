@@ -11,7 +11,7 @@ export const practitionerSchemaDefinition: SchemaDefinition = {
   idx: { type: [String] },
   name: { type: [humanNameSchemaDefinition] },
   telecom: { type: [contactPointSubSchemaDefinition] },
-  identification: { type: [identifierSubSchemaDefinition] },
+  identifier: { type: [identifierSubSchemaDefinition] },
   specialties: { type: [codeableConceptSubSchemaDefinition] },
   birthDate: { type: Date },
   active: { type: Boolean, default: true },
@@ -48,12 +48,14 @@ export const practitionerSchemaValidator: any = {
       items: {
         $ref: 'humanNameSchemaValidator.json#/definitions/humanNameSchemaValidator',
       },
+      minItems: 1,
     },
-    identification: {
+    identifier: {
       type: 'array',
       items: {
         $ref: 'identifierSchemaValidator.json#/definitions/identifierSchemaValidator',
       },
+      minItems: 1,
     },
     specialties: {
       type: 'array',
@@ -111,6 +113,6 @@ export const practitionerSchemaValidator: any = {
       type: 'number',
     },
   },
-  required: [],
+  required: ['name', 'identifier', 'birthDate'],
   additionalProperties: false,
 };
