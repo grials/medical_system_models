@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/grials/medical_system_models/compare/v1.0.4...v1.0.5) (2024-09-19)
+
+
+### Bug Fixes
+
+* finish day ([194c41a](https://github.com/grials/medical_system_models/commit/194c41a912c2665fd8743b0b14781489bb1d08a8))
+
 ## [1.0.4](https://github.com/grials/medical_system_models/compare/v1.0.3...v1.0.4) (2024-09-16)
 
 
