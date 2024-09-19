@@ -1,6 +1,6 @@
 {
   "name": "@grials/medical_system_models",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Medical System Models",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
