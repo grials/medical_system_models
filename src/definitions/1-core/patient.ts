@@ -19,7 +19,7 @@ export const patientSchemaDefinition: SchemaDefinition = {
   deceasedBoolean: { type: Boolean, default: false },
   deceasedDate: { type: Date },
   referedBy: { type: String },
-  identification: { type: [identifierSubSchemaDefinition] },
+  identifier: { type: [identifierSubSchemaDefinition] },
 };
 
 export const patientSubSchemaDefinition: SchemaDefinition = Object.assign({}, patientSchemaDefinition, {
@@ -52,6 +52,7 @@ export const patientSchemaValidator: any = {
       items: {
         $ref: 'humanNameSchemaValidator.json#/definitions/humanNameSchemaValidator',
       },
+      minItems: 1,
     },
     nationality: {
       $ref: 'codeableConceptSchemaValidator.json#/definitions/codeableConceptSchemaValidator',
@@ -73,11 +74,12 @@ export const patientSchemaValidator: any = {
       ],
     },
     referedBy: { type: 'string' },
-    identification: {
+    identifier: {
       type: 'array',
       items: {
         $ref: 'identifierSchemaValidator.json#/definitions/identifierSchemaValidator',
       },
+      minItems: 1,
     },
     birthDate: {
       anyOf: [
@@ -129,6 +131,6 @@ export const patientSchemaValidator: any = {
       type: 'number',
     },
   },
-  required: [],
+  required: ['name', 'identifier', 'birthDate'],
   additionalProperties: false,
 };

@@ -78,6 +78,6 @@ export const userSchemaValidator: any = {
       type: 'number',
     },
   },
-  required: [],
+  required: ['username', 'email', 'password', 'type'],
   additionalProperties: false,
 };
